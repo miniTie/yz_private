@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+
+    <script type="text/javascript" th:inline="javascript">
+
+        window.onload=function(){
+
+            showHint();
+
+        }
+
+        function showHint()
+        {
+
+            alert(11);
+            var xmlhttp=new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    alert(xmlhttp.responseText);
+                }
+            }
+            xmlhttp.open("GET","/myapp/feign");
+            xmlhttp.send();
+        }
+    </script>
+
+</head>
+<body>
+<input type="text" class="form-control1" id="name" name="name" th:value="${hh}">
+</body>
+</html>
